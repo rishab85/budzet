@@ -12,7 +12,7 @@ from .serializer import mainBudgetSerializer
 class mBudget(APIView):
 
     def get(self, request, format=None):
-        mbud = mBudget.objects.all()
+        mbud = mainBudget.objects.all()
         serializer = mainBudgetSerializer(mbud, many=True)
         return Response(serializer.data)
 
@@ -27,13 +27,13 @@ class mBudget(APIView):
 class mbudgetDetail(APIView):
     def get_object(self, pk):
         try:
-            return dueDates.objects.get(pk=pk)
-        except dueDates.DoesNotExist:
+            return mainBudget.objects.get(pk=pk)
+        except mainBudget.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
         mbud = self.get_object(pk)
-        serializer = mainBudgetSerializer(due)
+        serializer = mainBudgetSerializer(mbud)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
