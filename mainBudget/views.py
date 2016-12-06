@@ -6,14 +6,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
 from rest_framework import viewsets
-from .models import dueDates
-from .serializer import dueDatesSerializer
+from .models import mainBudget
+from .serializer import mainBudgetSerializer
 
 class mBudget(APIView):
 
     def get(self, request, format=None):
         mbud = mBudget.objects.all()
-        serializer = dueDatesSerializer(mbud, many=True)
+        serializer = mainBudgetSerializer(mbud, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
