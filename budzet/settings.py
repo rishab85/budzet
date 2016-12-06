@@ -25,7 +25,7 @@ SECRET_KEY = '731=tz0(wv9yeed^rnde#_8n1uehqk(=!s0-fmws3a&+z_+5p#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [budgget85.herokuapp.com]
+ALLOWED_HOSTS = ['budgget85.herokuapp.com']
 
 
 # Application definition
