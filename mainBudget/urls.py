@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from dueDates import views
+from mainBudget import views
 
 urlpatterns = [
     url(r'^budget/$', views.mBudget.as_view()),
