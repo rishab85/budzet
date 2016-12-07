@@ -7,5 +7,6 @@ class budzetMax(models.Model):
     expenditure_year = models.IntegerField(default = 2016)
     expenditure_month = models.IntegerField(default = 1)
     expenduture_date = models.IntegerField(default = 1)
+    expenditure_category_id = models.IntegerField(default=1)
     def __str__(self):
         return self.expenditure_name
