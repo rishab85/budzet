@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dueDates.apps.DuedatesConfig',
     'mainBudget.apps.MainbudgetConfig',
 'user.apps.UserConfig',
+'budgetCat.apps.BudgetcatConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

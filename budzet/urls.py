@@ -30,6 +30,7 @@ url(r'^budget/(?P<pk>[0-9]+)/$', views.budgetDetail.as_view()),
 url(r'^due/', include('dueDates.urls')),
 url(r'^main/', include('mainBudget.urls')),
 url(r'^user/', include('user.urls')),
+url(r'^budget/', include('budgetCat.urls')),
 
 ]
 
