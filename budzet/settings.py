@@ -25,7 +25,7 @@ SECRET_KEY = '731=tz0(wv9yeed^rnde#_8n1uehqk(=!s0-fmws3a&+z_+5p#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['budgget85.herokuapp.com']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dueDates.apps.DuedatesConfig',
     'mainBudget.apps.MainbudgetConfig',
 'user.apps.UserConfig',
+'budgetCat.apps.BudgetcatConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -124,4 +125,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join((BASE_DIR), 'static')
 STATIC_URL = '/static/'

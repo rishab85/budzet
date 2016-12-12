@@ -6,14 +6,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import generics
 from rest_framework import viewsets
-from .models import dueDates
-from .serializer import dueDatesSerializer
+from .models import mainBudget
+from .serializer import mainBudgetSerializer
 
 class mBudget(APIView):
 
     def get(self, request, format=None):
-        mbud = mBudget.objects.all()
-        serializer = dueDatesSerializer(mbud, many=True)
+        mbud = mainBudget.objects.all()
+        serializer = mainBudgetSerializer(mbud, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
@@ -27,13 +27,13 @@ class mBudget(APIView):
 class mbudgetDetail(APIView):
     def get_object(self, pk):
         try:
-            return dueDates.objects.get(pk=pk)
-        except dueDates.DoesNotExist:
+            return mainBudget.objects.get(pk=pk)
+        except mainBudget.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
         mbud = self.get_object(pk)
-        serializer = mainBudgetSerializer(due)
+        serializer = mainBudgetSerializer(mbud)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
